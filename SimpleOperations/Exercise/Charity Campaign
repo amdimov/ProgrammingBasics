@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int daysOfCampaign = Integer.parseInt(scanner.nextLine());
+        int numberOfConfectioners = Integer.parseInt(scanner.nextLine());
+        int cakes = Integer.parseInt(scanner.nextLine());
+        int waffles = Integer.parseInt(scanner.nextLine());
+        int pancakes = Integer.parseInt(scanner.nextLine());
+
+        double cakesPrice = cakes * 45;
+        double wafflesPrice = waffles * 5.80;
+        double pancakesPrice = pancakes * 3.20;
+
+        double totalProfitPerDay = (cakesPrice + wafflesPrice + pancakesPrice) * numberOfConfectioners;
+        double profitOfWholeCampaign = totalProfitPerDay * daysOfCampaign;
+        double totalProfit = profitOfWholeCampaign - (0.125 * profitOfWholeCampaign);
+
+        System.out.printf("%.2f", totalProfit);
+
+    }
+}
