@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double budget = Double.parseDouble(scanner.nextLine());
+        int extrasNumber = Integer.parseInt(scanner.nextLine());
+        double extrasClothPrice = Double.parseDouble(scanner.nextLine());
+
+        if (extrasNumber > 150){
+            extrasClothPrice = extrasClothPrice - (extrasClothPrice * 0.10);
+        }
+        double decorCost = budget * 0.10;
+        double exrasClothCost = extrasClothPrice * extrasNumber;
+        double extrasAndDecorCosts = (decorCost + exrasClothCost);
+        double moneyLeft =  budget - extrasAndDecorCosts;
+
+        if (budget >= extrasAndDecorCosts){
+            System.out.printf("Action!\nWingard starts filming with %.2f leva left.", moneyLeft);
+        }else
+            System.out.printf("Not enough money!\nWingard needs %.2f leva more.", Math.abs(moneyLeft));
+        
+
+
+
+
+    }
+}
