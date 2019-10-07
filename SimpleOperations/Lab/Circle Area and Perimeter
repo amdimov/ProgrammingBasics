@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double r = Double.parseDouble(scanner.nextLine());
+        double pi = 3.14159265359;
+        double face = pi * Math.pow(r, 2);
+        double tour = pi * 2 * r;
+
+        System.out.printf("%.2f\n%.2f", face, tour);
+
+    }
+}
