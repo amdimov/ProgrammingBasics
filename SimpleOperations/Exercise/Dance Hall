@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double widthHallMeter = Double.parseDouble(scanner.nextLine());
+        double lenghtHallMeter = Double.parseDouble(scanner.nextLine());
+        double wardrobeMeter = Double.parseDouble(scanner.nextLine());
+
+        double faceOfHallCm = (widthHallMeter * 100) * (lenghtHallMeter * 100);
+        double wardrobeSizeCm = (wardrobeMeter*100) * (wardrobeMeter * 100);
+        double benchSizeCm = faceOfHallCm / 10;
+        double freeSpace = faceOfHallCm - wardrobeSizeCm - benchSizeCm;
+        int numberOfDancers = (int)Math.floor(freeSpace / (40 + 7000));
+
+        System.out.println(numberOfDancers);
+    }
+}
