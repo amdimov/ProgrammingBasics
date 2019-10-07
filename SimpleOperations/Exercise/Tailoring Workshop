@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int numberOfTables = Integer.parseInt(scanner.nextLine());
+        double lenghtM = Double.parseDouble(scanner.nextLine());
+        double widthM = Double.parseDouble(scanner.nextLine());
+
+        double tableCloth = numberOfTables * (lenghtM + 2 * 0.30) * (widthM + 2 * 0.30);
+        double tableCover = numberOfTables * (lenghtM / 2) * (lenghtM / 2);
+
+        double priceUSD = (7 * tableCloth) + (tableCover * 9);
+        double priceBGN = priceUSD * 1.85;
+
+        System.out.printf("%.2f USD\n", priceUSD);
+        System.out.printf("%.2f BGN", priceBGN);
+
+    }
+}
