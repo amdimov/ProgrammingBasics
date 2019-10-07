@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double number = Double.parseDouble(scanner.nextLine());
+        String unitIn = scanner.nextLine();
+        String unitOut = scanner.nextLine();
+        double outputNumber = 0.0;
+        //Solution: turn every unitIn into meters, and then just convert the unitOut from meter value
+
+        switch (unitIn){
+            case "mm":
+                number = number / 1000;
+                break;
+            case "cm":
+                number = number / 100;
+                break;
+            case "m":
+                break;
+        }
+
+        switch (unitOut){
+            case "mm":
+                outputNumber = number * 1000;
+                break;
+            case "cm":
+                outputNumber = number * 100;
+                break;
+            case "m":
+                outputNumber = number;
+                break;
+        }
+
+        System.out.printf("%.3f", outputNumber);
+
+    }
+}
