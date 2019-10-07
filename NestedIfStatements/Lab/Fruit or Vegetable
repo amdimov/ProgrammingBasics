@@ -1,0 +1,20 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String fruit = scanner.nextLine().toLowerCase();
+
+        if ("banana".equals(fruit) || "apple".equals(fruit) || "kiwi".equals(fruit)
+                || "cherry".equals(fruit) || "lemon".equals(fruit)
+                || "grapes".equals(fruit)){
+            System.out.println("fruit");
+        }else if("tomato".equals(fruit) || "cucumber".equals(fruit)
+                || "pepper".equals(fruit) || "carrot".equals(fruit)){
+            System.out.println("vegetable");
+        }else System.out.println("unknown");
+    }
+}
