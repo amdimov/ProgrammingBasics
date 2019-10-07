@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double excursionPrice = Double.parseDouble(scanner.nextLine());
+        int puzzleQty = Integer.parseInt(scanner.nextLine());
+        int dollsQty = Integer.parseInt(scanner.nextLine());
+        int bearsQty = Integer.parseInt(scanner.nextLine());
+        int minionsQty = Integer.parseInt(scanner.nextLine());
+        int trucksQty = Integer.parseInt(scanner.nextLine());
+
+        int toysTotalQty = puzzleQty + dollsQty + bearsQty + minionsQty + trucksQty;
+        double profitTotal = puzzleQty * 2.60 + dollsQty * 3 + bearsQty * 4.10 + minionsQty * 8.20 + trucksQty * 2;
+        double rent = (profitTotal * 0.10);
+        profitTotal -= rent;
+        if (toysTotalQty >= 50){
+            profitTotal = profitTotal - (profitTotal * 0.25);
+        }
+
+        if (profitTotal >= excursionPrice){
+            System.out.printf("Yes! %.2f lv left.", profitTotal - excursionPrice);
+        }else if(excursionPrice > profitTotal){
+            System.out.printf("Not enough money! %.2f lv needed.", excursionPrice - profitTotal);
+        }
+    }
+}
