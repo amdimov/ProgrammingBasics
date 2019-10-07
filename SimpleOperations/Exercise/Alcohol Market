@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double whiskeyPrice = Double.parseDouble(scanner.nextLine());
+        double rakiaPrice = whiskeyPrice - (whiskeyPrice * 0.50);
+        double winePrice = rakiaPrice - (rakiaPrice * 0.40);
+        double beerPrice = rakiaPrice - (rakiaPrice * 0.80);
+
+        double beerQty = Double.parseDouble(scanner.nextLine()) * beerPrice;
+        double wineQty = Double.parseDouble(scanner.nextLine()) * winePrice;
+        double rakiaQty = Double.parseDouble(scanner.nextLine()) * rakiaPrice;
+        double whiskeyQty = Double.parseDouble(scanner.nextLine()) * whiskeyPrice;
+
+        double totalCost = beerQty + wineQty + rakiaQty + whiskeyQty;
+
+        System.out.printf("%.2f", totalCost);
+
+
+
+    }
+}
