@@ -1,0 +1,62 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String city = scanner.nextLine().toLowerCase();
+        double money = Double.parseDouble(scanner.nextLine());
+        double commission = 0.0;
+        double result = 0.0;
+        String output = "";
+
+        if ("sofia".equals(city)){
+            if (money >= 0 && money<= 500){
+                commission = 0.05;
+            }else if (money > 500 && money <= 1000){
+                commission = 0.07;
+            }else if (money > 1000 && money <= 10000){
+                commission = 0.08;
+            }else if (money > 10000){
+                commission = 0.12;
+            }else{
+                output = "error";
+            }
+        }else if ("varna".equals(city)){
+            if (money >= 0 && money<= 500){
+                commission = 0.045;
+            }else if (money > 500 && money <= 1000){
+                commission = 0.075;
+            }else if (money > 1000 && money <= 10000){
+                commission = 0.10;
+            }else if (money > 10000){
+                commission = 0.13;
+            }else{
+                output = "error";
+            }
+        }else if ("plovdiv".equals(city)){
+            if (money >= 0 && money<= 500){
+                commission = 0.055;
+            }else if (money > 500 && money <= 1000){
+                commission = 0.08;
+            }else if (money > 1000 && money <= 10000){
+                commission = 0.12;
+            }else if (money > 10000){
+                commission = 0.145;
+            }else{
+                output = "error";
+            }
+        }else {
+            output = "error";
+        }
+
+
+        if (!"error".equals(output)){
+            result = commission * money;
+            System.out.printf("%.2f", result);
+        }else System.out.println(output);
+
+    }
+}
