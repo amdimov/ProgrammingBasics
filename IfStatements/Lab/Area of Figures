@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String figure = scanner.nextLine();
+        double area = 0.0;
+
+        switch (figure){
+            case "square":
+                double a = Double.parseDouble(scanner.nextLine());
+                area = a *a;
+                break;
+            case "rectangle":
+                double sideA = Double.parseDouble(scanner.nextLine());
+                double sideB = Double.parseDouble(scanner.nextLine());
+                area = sideA * sideB;
+                break;
+            case "circle":
+                double r = Double.parseDouble(scanner.nextLine());
+                area = Math.PI * r * r;
+                break;
+            case  "triangle":
+                double triangleA = Double.parseDouble(scanner.nextLine());
+                double triangleH = Double.parseDouble(scanner.nextLine());
+                area = (triangleA * triangleH) / 2;
+                break;
+        }
+        System.out.printf("%.3f", area);
+
+    }
+}
