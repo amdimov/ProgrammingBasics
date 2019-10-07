@@ -1,0 +1,65 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String fruit = scanner.nextLine().toLowerCase();
+        String dayOfWeek = scanner.nextLine().toLowerCase();
+        double qty = Double.parseDouble(scanner.nextLine());
+        double price = 0.0;
+        String output = "";
+
+        if ("banana".equals(fruit) || "apple".equals(fruit) || "orange".equals(fruit) || "grapefruit".equals(fruit)
+        || "kiwi".equals(fruit) || "pineapple".equals(fruit) || "grapes".equals(fruit)){
+
+        }
+
+        if ("monday".equals(dayOfWeek) || "tuesday".equals(dayOfWeek) || "wednesday".equals(dayOfWeek)
+                || "thursday".equals(dayOfWeek) || "friday".equals(dayOfWeek)){
+            if ("banana".equals(fruit)) {
+                price = 2.5;
+            }else if ("apple".equals(fruit)){
+                price = 1.20;
+            }else if ("orange".equals(fruit)){
+                price = 0.85;
+            }else if ("grapefruit".equals(fruit)){
+                price = 1.45;
+            }else if ("kiwi".equals(fruit)){
+                price = 2.70;
+            }else if ("pineapple".equals(fruit)){
+                price = 5.50;
+            }else if ("grapes".equals(fruit)){
+                price = 3.85;
+            }else {
+                output = "error";
+            }
+        }else if ("saturday".equals(dayOfWeek) || "sunday".equals(dayOfWeek)){
+            if ("banana".equals(fruit)) {
+                price = 2.70;
+            }else if ("apple".equals(fruit)){
+                price = 1.25;
+            }else if ("orange".equals(fruit)){
+                price = 0.90;
+            }else if ("grapefruit".equals(fruit)){
+                price = 1.60;
+            }else if ("kiwi".equals(fruit)){
+                price = 3.00;
+            }else if ("pineapple".equals(fruit)){
+                price = 5.60;
+            }else if ("grapes".equals(fruit)){
+                price = 4.20;
+            }else {
+                output = "error";
+            }
+        }else {output = "error";}
+
+        double result = qty * price;
+        if (result != 0.0) {
+            output = String.format("%.2f",result);
+            System.out.println(output);
+        }else System.out.println(output);
+    }
+}
