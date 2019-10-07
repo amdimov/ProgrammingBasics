@@ -1,0 +1,50 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int days = Integer.parseInt(scanner.nextLine());
+        days -= 1;
+        String roomType = scanner.nextLine();
+        String rating = scanner.nextLine();
+        double pricePerNight = 0.0;
+        double totalCost = 0.0;
+
+        if (roomType.equals("room for one person")){
+            pricePerNight = 18.00;
+            totalCost = pricePerNight * days;
+
+        }else if (roomType.equals("apartment")){
+            pricePerNight = 25.00;
+            totalCost = pricePerNight * days;
+            if (days < 10){
+                totalCost = totalCost - (totalCost * 0.30);
+            }else if (days >= 10 && days < 15){
+                totalCost = totalCost - (totalCost * 0.35);
+            }else if (days >= 15){
+                totalCost = totalCost - (totalCost * 0.50);
+            }
+        }else if (roomType.equals("president apartment")){
+            pricePerNight = 35.00;
+            totalCost = pricePerNight * days;
+            if (days < 10){
+                totalCost = totalCost - (totalCost * 0.10);
+            }else if (days >= 10 && days < 15){
+                totalCost = totalCost - (totalCost * 0.15);
+            }else if (days >= 15){
+                totalCost = totalCost - (totalCost * 0.20);
+            }
+        }
+
+        if (rating.equals("positive")){
+            totalCost = totalCost + totalCost * 0.25;
+        }else if (rating.equals("negative")){
+            totalCost = totalCost - totalCost * 0.10;
+        }
+
+        System.out.printf("%.2f", totalCost);
+    }
+}
